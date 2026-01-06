@@ -1,0 +1,13 @@
+name: ok-to-test
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  ok-to-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slash Command Dispatch
+        uses: peter-evans/slash-command-dispatch@v5
+        with:
+          commands: |
+            ok-to-test
